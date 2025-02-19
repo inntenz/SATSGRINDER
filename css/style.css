@@ -1,7 +1,12 @@
+.partners-slider-item {
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    height: 100%; /* Container-Höhe */
+}
+
 .partner-img {
-    height: 50px; /* Feste Höhe von 25px */
+    height: 100px; /* Feste Höhe */
     width: auto; /* Automatische Breite */
-    display: flex;
-    align-items: center;
     object-fit: contain; /* Bildinhalt skalieren, um in den Rahmen zu passen */
 }
