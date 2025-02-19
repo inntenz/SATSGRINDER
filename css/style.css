@@ -1,6 +1,5 @@
 .partner-img {
     height: 25px; /* Feste Höhe von 25px */
     width: auto; /* Automatische Breite */
-    max-width: 20%; /* Maximale Breite 20% des Containers */
     object-fit: contain; /* Bildinhalt skalieren, um in den Rahmen zu passen */
 }
