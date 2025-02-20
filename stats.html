@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Stats</title>
+  <script>
+    async function loadStats() {
+      const response = await fetch('/.netlify/functions/stats');
+      const data = await response.json();
+      
+      document.getElementById('total').textContent = `Total Visits: ${data.total}`;
+      const countryList = document.getElementById('countries');
+      for (const [country, count] of Object.entries(data.countries)) {
+        const li = document.createElement('li');
+        li.textContent = `${country}: ${count}`;
+        countryList.appendChild(li);
+      }
+    }
+
+    window.onload = loadStats;
+  </script>
+</head>
+<body>
+  <h1>Traffic Statistics</h1>
+  <p id="total">Loading...</p>
+  <ul id="countries"></ul>
+</body>
+</html>
