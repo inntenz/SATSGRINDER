@@ -1,0 +1,37 @@
+.introbanner {
+    background: linear-gradient(to right,#232526,#414345);
+}
+
+.introbanner .content {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    justify-content: space-between;
+}
+
+.introbanner h1{
+    margin-top: 75px;
+    font-size: 50px;
+}
+
+.introbanner h1 .color{
+    color:  var(--blue); 
+}
+
+.introbanner p{
+    padding-top: 3%;
+}
+
+.introbanner .logo-right{
+    margin-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.introbanner .logo-right img{
+    width: 20%;
+    float: right;
+}
