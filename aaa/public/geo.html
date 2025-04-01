@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometry Dash Clone</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      background: linear-gradient(180deg, #000428, #004e92);
+    }
+    #restart-btn {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <button id="restart-btn">Restart</button>
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    const restartBtn = document.getElementById("restart-btn");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const GRAVITY = 0.6;
+    const JUMP_FORCE = -10;
+    let gameSpeed = 3;
+    let terrainGap = 250; // Distance between top and bottom spikes
+    let score = 0;
+
+    let player = {
+      x: 100,
+      y: canvas.height / 2,
+      width: 30,
+      height: 30,
+      color: "yellow",
+      velocityY: 0,
+      trail: []
+    };
+
+    let terrain = []; // Stores the spikes and gaps
+
+    function resetGame() {
+      score = 0;
+      player.y = canvas.height / 2;
+      player.velocityY = 0;
+      player.trail = [];
+      terrain = [];
+      gameSpeed = 3; // Reset speed
+      generateTerrain();
+      loop();
+      restartBtn.style.display = "none";
+    }
+
+    function generateTerrain() {
+      for (let i = 0; i < canvas.width + 200; i += 150) {
+        terrain.push({
+          x: i,
+          gapY: Math.random() * (canvas.height - terrainGap * 1.5) + terrainGap / 2,
+        });
+      }
+    }
+
+    function drawPlayer() {
+      // Draw trail
+      ctx.fillStyle = "rgba(255, 255, 0, 0.5)";
+      player.trail.forEach(pos => {
+        ctx.fillRect(pos.x, pos.y, player.width, player.height);
+      });
+
+      // Draw player
+      ctx.fillStyle = player.color;
+      ctx.fillRect(player.x, player.y, player.width, player.height);
+    }
+
+    function updatePlayer() {
+      player.velocityY += GRAVITY;
+      player.y += player.velocityY;
+
+      // Prevent player from leaving canvas
+      if (player.y + player.height > canvas.height) {
+        player.y = canvas.height - player.height;
+        player.velocityY = 0;
+      } else if (player.y < 0) {
+        player.y = 0;
+        player.velocityY = 0;
+      }
+
+      // Add position to trail
+      player.trail.push({ x: player.x - 10, y: player.y });
+      if (player.trail.length > 10) {
+        player.trail.shift();
+      }
+    }
+
+    function drawTerrain() {
+      terrain.forEach(segment => {
+        ctx.fillStyle = "red";
+
+        // Draw top spikes
+        ctx.beginPath();
+        ctx.moveTo(segment.x, 0);
+        ctx.lineTo(segment.x + 30, segment.gapY - terrainGap / 2);
+        ctx.lineTo(segment.x - 30, segment.gapY - terrainGap / 2);
+        ctx.closePath();
+        ctx.fill();
+
+        // Draw bottom spikes
+        ctx.beginPath();
+        ctx.moveTo(segment.x, canvas.height);
+        ctx.lineTo(segment.x + 30, segment.gapY + terrainGap / 2);
+        ctx.lineTo(segment.x - 30, segment.gapY + terrainGap / 2);
+        ctx.closePath();
+        ctx.fill();
+      });
+    }
+
+    function updateTerrain() {
+      terrain.forEach(segment => {
+        segment.x -= gameSpeed;
+      });
+
+      // Remove off-screen terrain and add new segments
+      if (terrain[0].x < -50) {
+        terrain.shift();
+        terrain.push({
+          x: canvas.width + 150,
+          gapY: Math.random() * (canvas.height - terrainGap * 1.5) + terrainGap / 2,
+        });
+      }
+    }
+
+    function checkCollision() {
+      for (let segment of terrain) {
+        if (
+          player.x + player.width > segment.x - 30 &&
+          player.x < segment.x + 30 &&
+          (player.y < segment.gapY - terrainGap / 2 || player.y + player.height > segment.gapY + terrainGap / 2)
+        ) {
+          gameOver();
+          return;
+        }
+      }
+    }
+
+    function gameOver() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+      ctx.font = "30px Arial";
+      ctx.fillText("Game Over", canvas.width / 2 - 80, canvas.height / 2 - 20);
+      ctx.fillText(`Score: ${score}`, canvas.width / 2 - 60, canvas.height / 2 + 20);
+      cancelAnimationFrame(animationId);
+      restartBtn.style.display = "block";
+    }
+
+    let animationId;
+    function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      updatePlayer();
+      updateTerrain();
+      drawPlayer();
+      drawTerrain();
+      checkCollision();
+
+      // Update and display score
+      score += 1;
+      ctx.fillStyle = "white";
+      ctx.font = "20px Arial";
+      ctx.fillText(`Score: ${score}`, 20, 40);
+
+      // Gradually increase game speed
+      if (score % 500 === 0) {
+        gameSpeed += 0.2;
+      }
+
+      animationId = requestAnimationFrame(loop);
+    }
+
+    window.addEventListener("keydown", e => {
+      if (e.code === "Space") {
+        player.velocityY = JUMP_FORCE;
+      }
+    });
+
+    canvas.addEventListener("touchstart", () => {
+      player.velocityY = JUMP_FORCE;
+    });
+
+    restartBtn.addEventListener("click", resetGame);
+
+    resetGame();
+  </script>
+</body>
+</html>

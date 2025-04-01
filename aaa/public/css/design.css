@@ -1,0 +1,25 @@
+button{
+    width: 100%;
+    margin-top: 2%;
+    color: #fff;
+    background-color: var(--blue);
+    padding: 2.5%;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:disabled {
+    background-color: #2E2E2E;
+    cursor: not-allowed ;
+    outline: none ;
+    box-shadow: none;
+    border: 1px solid #2E2E2E;
+}
+
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
