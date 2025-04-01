@@ -1,0 +1,50 @@
+{
+  "minewolf@gmail.com": {
+    "challenges": [
+      "1",
+      "2",
+      "3"
+    ],
+    "address": "intenz@speed.app",
+    "role": "high",
+    "password": "af4066e6b4047ce8294b07167c66aff7",
+    "username": "Intenz",
+    "userid": "744701742399029089",
+    "country": "Germany",
+    "ip": "195.14.248.50",
+    "registerdate": 1742399029089,
+    "banned": false,
+    "sats": 1,
+    "last_faucet_claim": 1743500340056,
+    "totalcashout": 235,
+    "totalclaims": 26,
+    "cashouts": [
+      {
+        "amount": 11,
+        "date": "31.3.2025"
+      },
+      {
+        "amount": 10,
+        "date": "31.3.2025"
+      },
+      {
+        "amount": 15,
+        "date": "31.3.2025"
+      }
+    ]
+  },
+  "test@test.com": {
+    "password": "1ce55c7f8813b00d1536a0941b45f194",
+    "username": "TestUser",
+    "userid": "083821742999090683",
+    "country": "Germany",
+    "ip": "89.0.209.187",
+    "registerdate": 1742999090683,
+    "banned": true,
+    "sats": 2,
+    "last_faucet_claim": 1743066117009,
+    "totalcashout": 0,
+    "totalclaims": 2,
+    "cashouts": []
+  }
+}

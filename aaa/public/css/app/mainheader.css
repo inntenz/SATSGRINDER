@@ -1,0 +1,48 @@
+.sticky-banner {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(26, 198, 255, 0); 
+    background: #11141b;
+    z-index: 1000;
+    border-bottom: 2px solid var(--blue);
+    
+    
+}
+.sticky-banner .satscounter{
+    width: 50%;
+    text-align: right;
+    color: white;
+    display: flex;
+    justify-content: end;
+    
+}
+.sticky-banner .satscounter p{
+    padding: 1.5%;
+    border: 2px solid var(--blue);
+    border-radius: 15px;
+}
+
+.sticky-banner .logo {
+    width: 30%;
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 15%;
+    
+}
+
+.sticky-banner .logo .logo-sats {
+    color: var(--blue); 
+}
+
+.sticky-banner .logo .logo-grinder {
+    color: #fff;
+}
