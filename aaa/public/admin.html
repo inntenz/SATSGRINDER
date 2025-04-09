@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/adminpanel/design.css">
+    <link rel="stylesheet" href="css/notifications.css">
+</head>
+<body>
+    <div id="password-section">
+        <h2>Admin Panel</h2>
+        <p id="password-error" style="color: red; display: none;">Not ALLOWED</p>
+    </div>
+
+    <div id="admin-panel" style="display: none;">
+        <h2>Admin Panel</h2>
+        <form id="panel">
+            <input type="text" id="email-search" placeholder="Search by Email" required>
+            <button type="submit" id="lookup-email">Search</button>
+            <ul id="results"></ul>
+            <div id="user-info" style="display: none; margin-top: 20px;">
+                <h3>User Details</h3>
+                <p id="username"></p>
+                <p id="email"></p>
+                <p id="userid"></p>
+                <p id="country"></p>
+                <p id="ip"></p>
+                <p id="coins"></p>
+                <p id="totalcashout"></p>
+                <p id="registerdate"></p>
+                <p id="banned"></p>
+                <button id="banbutton">ban</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script/admin.js"></script>
+    <script src="script/notification.js"></script>
+    <script src="script/cookies.js"></script>
+</body>
+</html>

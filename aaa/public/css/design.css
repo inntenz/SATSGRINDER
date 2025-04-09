@@ -1,0 +1,171 @@
+.red{
+    color: var(--red);
+}
+.blue{
+    color: var(--blue);
+}
+
+button{
+    width: 100%;
+    color: #fff;
+    background-color: var(--blue);
+    padding: 2%;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:disabled {
+    background-color: #2E2E2E;
+    cursor: not-allowed ;
+    outline: none ;
+    box-shadow: none;
+    border: 1px solid #2E2E2E;
+}
+
+input {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid var(--blue);
+    border-radius: 15px;
+    width: 100%;
+    padding: 2%;
+    font-size: 15px;
+    color: var(--blue);
+    outline: none;
+    margin-bottom: 2%;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+h2 {
+    margin-bottom: 2%;
+}
+
+h3 {
+    margin-left: auto;
+}
+
+p{
+    margin-bottom: 2%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.content-areas{
+    border: 2px solid var(--blue);
+    border-radius: 15px;
+    padding: 5%;
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.innerItem {
+    border: 2px solid var(--blue);
+    border-radius: 15px;
+    padding: 5%;
+    margin-bottom: 3%;
+}
+
+.content-beta p{
+    font-size: 17px;
+    margin-bottom: 0;
+}
+
+#sats {
+    font-size: 17px;
+    margin-bottom: 1%;
+}
+
+#inputlightning {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid var(--blue);
+    border-radius: 15px;
+    width: 100%;
+    padding: 2%;
+    font-size: 15px;
+    color: var(--blue);
+    outline: none;
+}
+
+.ad-space img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.wallet-home span{
+    font-size: 22.5px;
+    font-weight: bold;
+}
+
+.withdraws-home .row {
+    padding-top: 2%;
+    column-gap: 5%; 
+}
+
+.withdraws-home .row > *:last-child {
+    margin-left: 15%;
+}
+
+.withdraws-home .row i{
+    font-size: 30px;
+}
+
+
+.profile-user {
+    align-items: center;
+}
+
+.profile-user #avatar{
+    width: 20%;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.profile-user #flag{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-stats-row{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+.profile-stats-row .stats-box{
+    width: 47.5%;
+    border: 2px solid var(--blue);
+    border-radius: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+}

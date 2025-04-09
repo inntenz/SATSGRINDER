@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="261549906027-378s3in6k79ua7o5ft1bkhq7mavesplf.apps.googleusercontent.com">
+
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <h1>Login with Google</h1>
+    <button id="google-login">Login with Google</button>
+
+
+    <script>
+        function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          console.log('ID: ' + profile.getId()); // ID nicht an den Backend-Server senden! Verwende stattdessen das ID-Token.
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail()); // E-Mail-Adresse, wenn der 'email'-Bereich vorhanden ist.
+      
+          // Hier kannst du das ID-Token an deinen Backend-Server senden:
+          var id_token = googleUser.getAuthResponse().id_token;
+          console.log('ID Token: ' + id_token);
+      
+          // Sende das Token an deinen Backend-Server
+          fetch('/auth/google', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id_token: id_token })
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Serverantwort:', data);
+          });
+        }
+      </script>
+      
+
+    <a href="#" onclick="signOut();">Sign out</a>
+
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
+    "axios": "^1.8.4",
+    "cheerio": "^1.0.0",
+    "compromise": "^14.14.4",
+    "express": "^5.1.0",
+    "google-translate-api": "^2.3.0",
+    "langdetect": "^0.2.1",
+    "lowdb": "^7.0.1",
+    "natural": "^8.0.1",
+    "node-summary": "^1.2.0",
+    "puppeteer": "^24.6.0"
+  }
+}

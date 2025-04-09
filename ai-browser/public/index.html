@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Tha AI | Home</title>
+            <link id="colorcss" rel="stylesheet" href="css/homepage-dark.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+        </head>
+        <body>
+            <div class="header">
+                <div></div>
+                <h1>Tha AI</h1>
+                <h3>Welcome to the Future</h3>
+            </div>
+
+
+            <div class="site">
+                <div class="content">
+                    <h1>Models:</h1>
+                    <div class="model-box-row">
+                        <button onclick="window.location.href='/gpt-4o-mini'">
+                            <h2>ChatGPT-4o-mini</h2>
+                            <p>
+                                • Fast response time<br>
+                                • Optimized for speed over depth<br>
+                                • Ideal for simple tasks and quick queries
+                            </p>
+                        </button>
+                        <button onclick="window.location.href='/gpt-4o'">
+                            <h2>ChatGPT-4o</h2>
+                            <p>
+                                • High accuracy and deep reasoning<br>
+                                • Supports advanced tasks<br>
+                                • Best for complex conversations
+                            </p>
+                        </button>
+                    </div>
+                    <div class="model-box-row">
+                        <button onclick="window.location.href='/plutogpt-4o-mini'">
+                            <h2>PlutoGPT-4o-mini</h2>
+                            <p>
+                                • Enhanced reasoning over 3.5<br>
+                                • Still fast and lightweight<br>
+                                • Good for both quick and thoughtful tasks
+                            </p>
+                        </button>
+                        <button onclick="window.location.href='/plutogpt-3.5-turbo'">
+                            <h2>PlutoGPT-3.5-turbo</h2>
+                            <p>
+                                • Lightweight and efficient<br>
+                                • Great for everyday use<br>
+                                • Balances speed and functionality
+                            </p>
+                        </button>
+                    </div>
+                    <div class="model-box-row">
+                        <button onclick="window.location.href='/translator'">
+                            <h2>Translator</h2>
+                            <p>
+                                STILL IN DEVELOPMENT!
+                            </p>
+                        </button>
+                        
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h1>Information:</h1>
+                    <div class="information-box-row">
+                        <div class="information-container">
+                            <h2>Usage:</h2>
+                            <p id="usageelement"></p>
+                        </div>
+                        <div class="information-container">
+                            <h2>Launch:</h2>
+                            <p id="launchelement"></p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+            
+            <script src="script/cookies.js"></script>
+            <script src="script/home.js"></script>
+            <script src="script/colormode.js"></script>
+            <script>history.pushState(null, '', '/home');</script>
+        </body>
+    </html>
