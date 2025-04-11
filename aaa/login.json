@@ -1,0 +1,77 @@
+{
+  "minewolf@gmail.com": {
+    "challenges": [
+      "1",
+      "2",
+      "3"
+    ],
+    "address": "Intenz@speed.app",
+    "role": "high",
+    "password": "af4066e6b4047ce8294b07167c66aff7",
+    "username": "Intenz",
+    "userid": "744701742399029089",
+    "country": "Germany",
+    "countrylink": "https://flagcdn.com/w320/de.png",
+    "ip": "195.14.248.50",
+    "registerdate": 1742399029089,
+    "banned": false,
+    "sats": 2,
+    "last_faucet_claim": 1743601799786,
+    "totalcashout": 369,
+    "totalclaims": 31,
+    "cashouts": [
+      {
+        "amount": 15,
+        "date": "31.3.2025"
+      },
+      {
+        "amount": 92,
+        "date": "1.4.2025"
+      },
+      {
+        "amount": 42,
+        "date": "2.4.2025"
+      }
+    ]
+  },
+  "test@test.com": {
+    "password": "1ce55c7f8813b00d1536a0941b45f194",
+    "username": "TestUser",
+    "userid": "083821742999090683",
+    "country": "Germany",
+    "ip": "89.0.209.187",
+    "registerdate": 1742999090683,
+    "banned": true,
+    "sats": 2,
+    "last_faucet_claim": 1743066117009,
+    "totalcashout": 0,
+    "totalclaims": 2,
+    "cashouts": []
+  },
+  "minewolf.gamer08@gmail.com": {
+    "password": "af4066e6b4047ce8294b07167c66aff7",
+    "username": "Intenz",
+    "userid": "998991743514201874",
+    "country": "Germany",
+    "countrylink": {},
+    "ip": "89.0.210.141",
+    "registerdate": 1743514201876,
+    "banned": false,
+    "sats": 0,
+    "last_faucet_claim": 1743514273478,
+    "totalcashout": 16,
+    "totalclaims": 1,
+    "address": "",
+    "cashouts": [
+      {
+        "amount": 16,
+        "date": "1.4.2025"
+      }
+    ],
+    "challenges": [
+      "2",
+      "3",
+      "1"
+    ]
+  }
+}
