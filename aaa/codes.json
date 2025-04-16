@@ -1,0 +1,22 @@
+{
+  "codohondo-ONLY TEST": {
+    "usedemails": [],
+    "codesleft": 0,
+    "rewardsats": 5
+  },
+  "launch": {
+    "usedemails": [
+      {
+        "email": "mine@gmail.com"
+      },
+      {
+        "email": "minewolf@gmail.com"
+      },
+      {
+        "email": "minewolf@gmail.com"
+      }
+    ],
+    "codesleft": 17,
+    "rewardsats": 25
+  }
+}

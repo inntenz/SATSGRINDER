@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+            <title>Tha AI | gpt-4o</title>
+            <link rel="icon" type="image/x-icon" href="img/logo.ico">
+            <link id="colorcss" rel="stylesheet" href="css/ai-page-dark.css">
+            <link id="highlightjs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">              
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+            
+        </head>
+        <body>
+            <div class="header">
+                <div class="header-container">
+                    
+                    <button onclick="window.location.href='/home'">
+                        <i class="fas fa-home"></i>
+                    </button>
+                    
+                    <button id="newsite" onclick="window.location.reload()">
+                        <i class="fas fa-edit"></i>
+                    </button>
+            
+                    
+                
+                    <h1>Tha AI</h1>
+
+                    <div class="dropdown">
+                        <button class="dropdown-button">ChatGPT-4o<i class="fas fa-caret-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="/gpt-4o-mini">ChatGPT-4o-mini</a>
+                            <a href="/plutogpt-4o-mini">PlutoGPT-4o-mini</a>
+                            <a href="/plutogpt-3.5-turbo">PlutoGPT-3.5-turbo</a>
+                        </div>
+                    </div>
+    
+                
+                </div>
+            </div>
+
+
+            <div class="chat">
+                <div class="site">
+                    <div id="response"></div>
+                </div>
+                <div class="promptbg">
+                    <div class="start">
+                        <h1>Ask a question of your choice</h1>
+                    </div>
+                    <div class="prompt-start">
+                        <textarea id="prompt" placeholder="How can I help you?" oninput="checkInput()"></textarea>
+                        
+                        <button id="submitbtn" onclick="sendMessage()">
+                            <img id="symbol" src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/arrow-up.svg" alt="Pfeil nach oben">
+                        </button>
+                    </div>
+                    <p id="errorinfo">Tha AI can make mistakes. Double check important Information</p>
+                </div>
+            </div>
+
+            <script src="script/ai.js"></script>
+            <script src="script/utils/cookis.js"></script>
+            <script src="script/utils/colormode.js"></script>
+            <script id="model" type="text/plain">gpt-4o</script>
+            <script>history.pushState(null, '', '/gpt-4o-normal');</script>
+            <script>
+                const dropdownButton = document.querySelector(".dropdown-button");
+                const dropdownContent = document.querySelector(".dropdown-content");
+              
+                dropdownButton.addEventListener("click", function (e) {
+                  e.stopPropagation(); 
+                  dropdownContent.classList.toggle("show");
+                });
+              
+                
+                document.addEventListener("click", function () {
+                  dropdownContent.classList.remove("show");
+                });
+            </script>
+        </body>
+    </html>

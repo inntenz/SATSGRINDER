@@ -1,0 +1,468 @@
+:root {
+    --blue: #1a8dff;
+    --red: #ff1a1a;
+    --background-color: #252525;
+    --promptbackground-color: #353535;
+    --border-color: #505050;
+    --font-color: #9E9E9E;
+}
+
+
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--font-color);
+    text-align: left;
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.site {
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: var(--background-color);
+    height: 5.5%;
+}
+
+
+.header-container {
+    margin-top: 0.25%;
+    margin-bottom: 0.25%;
+    height: 100%;
+    margin-left: 3%;
+    display: flex;
+    gap: 1%;
+    align-items: center;
+}
+
+.header h1,
+.header i,
+.header button {
+    color: var(--font-color);
+    background: none;
+    border: none;
+}
+
+.header h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.header i {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dropdown-button i {
+    margin-left: 10px;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--promptbackground-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: var(--font-color);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.userprompt {
+    margin-left: auto;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5%;
+    border: 2px solid var(--promptbackground-color);
+    background-color: var(--promptbackground-color);
+    border-radius: 25px;
+    max-width: 60%; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.userprompt p {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.promptbg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background-color);
+    position: fixed;
+    width: 100vw;
+    height: 14%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.prompt {
+    height: 8%;
+    padding: 1%;
+    background-color: var(--promptbackground-color);
+    width: 60%;
+    color: var(--font-color);
+    position: fixed;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid var(--font-color);
+    border-radius: 20px;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; 
+}
+
+.prompt button {
+    background-color: var(--font-color);
+    margin-left: auto;
+    padding: 1%;
+    border: none;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.prompt-start {
+    height: 8%;
+    padding: 1%;
+    background-color: var(--promptbackground-color);
+    width: 60%;
+    color: var(--font-color);
+    position: fixed;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid var(--font-color);
+    border-radius: 20px;
+    bottom: 42.5%;                
+    left: 50%;               
+    transform: translateX(-50%);
+    z-index: 1; 
+}
+
+
+
+.prompt-start button {
+    background-color: var(--font-color);
+    margin-left: auto;
+    padding: 1%;
+    border: none;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+textarea {
+    border: none;
+    width: 80%;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--font-color);
+    background-color: var(--promptbackground-color);
+    padding: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+textarea:focus {
+    outline: none;
+    border: none;
+    width: 80%;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--font-color);
+    background-color: var(--promptbackground-color);
+    padding: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+textarea::placeholder {
+    color: var(--font-color);
+}
+
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.start {
+    padding: 1%;
+    width: 94%;
+    color: white;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px;
+    top: calc(42.5% - 10% - 5.5%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+}
+
+
+#errorinfo {
+    text-align: center;
+    color: var(--font-color);
+    font-size: 12px;
+    margin-top: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: -1.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.block {
+    margin-left: 20.5%;
+    margin-right: 20.5%;
+    width: 55%;
+    padding: 2%;
+    margin-bottom: 10%;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    color: var(--font-color);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.copy-btn:hover {
+    background: none;
+    color: var(--border-color);
+}
+
+pre {
+    position: relative;
+    margin-bottom: 2%;
+}
+
+pre code {
+    background: var(--code-bg);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    display: block;
+}
+
+a {
+    color: var(--font-color);
+}
+
+
+
+/* Laptops (max. Breite von 1366px) */
+@media screen and (max-width: 1366px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+/* Tablets (z. B. iPads, max. Breite von 768px) */
+@media screen and (max-width: 768px) {
+    
+}
+
+/* Smartphones (z. B. iPhones, max. Breite von 480px) */
+@media screen and (max-width: 480px) {
+
+    .prompt {
+        height: 7%;
+        padding: 1%;
+        background-color: var(--promptbackground-color);
+        width: 95%;
+        color: var(--font-color);
+        position: fixed;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: row;
+        align-items: center;
+        border: 2px solid var(--font-color);
+        border-radius: 20px;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1; 
+    }
+    
+    .prompt button {
+        background-color: var(--font-color);
+        margin-left: auto;
+        padding: 1%;
+        margin-right: 3%;
+        border: none;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    
+    .prompt-start {
+        height: 7%;
+        padding: 1%;
+        background-color: var(--promptbackground-color);
+        width: 95%;
+        color: var(--font-color);
+        position: fixed;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: row;
+        align-items: center;
+        border: 2px solid var(--font-color);
+        border-radius: 20px;
+        bottom: 42.5%;                
+        left: 50%;               
+        transform: translateX(-50%);
+        z-index: 1; 
+    }
+    
+    
+    
+    .prompt-start button {
+        background-color: var(--font-color);
+        margin-left: auto;
+        padding: 1%;
+        margin-right: 3%;
+        border: none;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    textarea {
+        border: none;
+        width: 80%;
+        font-size: 15px;
+        line-height: 1;
+        color: var(--font-color);
+        background-color: var(--promptbackground-color);
+        padding: 2px;
+        padding-left: 4%;
+        padding-right: 4%;
+        box-sizing: border-box;
+        resize: vertical;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+    
+    textarea:focus {
+        border: none;
+        width: 80%;
+        font-size: 15px;
+        line-height: 1;
+        color: var(--font-color);
+        background-color: var(--promptbackground-color);
+        padding: 2px;
+        padding-left: 4%;
+        padding-right: 4%;
+        box-sizing: border-box;
+        resize: vertical;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+    
+    textarea::placeholder {
+        border: none;
+        width: 80%;
+        font-size: 15px;
+        line-height: 1;
+        color: var(--font-color);
+        background-color: var(--promptbackground-color);
+        box-sizing: border-box;
+        resize: vertical;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+    
+    
+    textarea::-webkit-scrollbar {
+        display: none;
+    }
+
+    .block {
+        margin-left: 4%;
+        margin-right: 4%;
+        width: 90%;
+        padding: 2%;
+        margin-bottom: 20%;
+        display: inline-block;
+    }
+    
+    
+}
